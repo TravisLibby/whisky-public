@@ -1,0 +1,37 @@
+{{#if successMessage}}
+  <div class="alert alert-success" role="alert">{{successMessage}}</div>
+{{/if}}
+{{#if errorMessage}}
+  <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+{{/if}}
+<h1>Add a Whisky</h1>
+<form {{action "save" on="submit"}}>
+  <div class="form-group">
+    {{input class="form-control" type="text" placeholder="Distiller" value=model.distiller}}
+  </div>
+  <div class="form-group">
+    {{input class="form-control" type="text" placeholder="Bottle" value=model.bottle}}
+  </div>
+  <div class="form-group">
+    {{#x-select class="form-control" value=model.region }}
+      {{#x-option value="Region"}}Region{{/x-option}}
+      {{#x-option value="Islands (Islay & Skye)"}}Islands (Islay &amp; Skye){{/x-option}}
+      {{#x-option value="Highlands"}}Highlands{{/x-option}}
+      {{#x-option value="Speyside"}}Speyside{{/x-option}}
+      {{#x-option value="Lowlands"}}Lowlands{{/x-option}}
+    {{/x-select}}
+  </div>
+  <div class="form-group">
+    {{input class="form-control" type="text" placeholder="Color" value=model.color}}
+  </div>
+  <div class="form-group">
+    {{input type="number" min="1" max="5" placeholder="1" value=model.rating}}
+  </div>
+  <div class="form-group">
+    {{textarea class="form-control" type="text" placeholder="Notes" value=model.notes}}
+  </div>
+  <div class="form-group">
+    {{#link-to "whiskies" class="btn btn-danger"}}Cancel{{/link-to}}
+    <button class="btn btn-primary pull-right" {{action "save"}} type="submit">Add Whisky Review</button>
+  </div>
+</form>

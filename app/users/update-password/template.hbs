@@ -1,0 +1,18 @@
+<div class="row" style="margin-top: 200px;">
+  <div class="col-md-4 col-md-offset-4" id="update-password-form">
+    {{#if errorMessage}}
+      <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+    {{/if}}
+    <form {{action "updatePassword" on="submit"}}>
+      <div class="form-group">
+        {{input class="form-control" type="text" placeholder="Username" value=username}}
+      </div>
+      <div class="form-group">
+        {{input class="form-control" type="password" placeholder="New Password" value=password}}
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Update Password</button>
+      </div>
+    </form>
+  </div>
+</div>

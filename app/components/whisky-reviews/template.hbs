@@ -1,0 +1,11 @@
+{{#link-to "whiskies.new" class="btn btn-default" role="button"}}Add Whisky{{/link-to}}
+<div class="list-group">
+  {{#each model as |whisky|}}
+    {{#if whisky.id}}
+      {{#link-to "whiskies.whisky" whisky.id class="list-group-item"}}
+        <h4 class="list-group-item-heading">{{whisky.distiller}}</h4>
+        <p class="list-group-item-text">{{whisky.bottle}}</p>
+      {{/link-to}}
+    {{/if}}
+  {{/each}}
+</div>

@@ -1,0 +1,25 @@
+<div class="col-md-4 col-md-offset-6" id="sign-up-form">
+  {{#if successMessage}}
+    <div class="alert alert-success" role="alert">{{successMessage}}</div>
+  {{/if}}
+  {{#if errorMessage}}
+    <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+  {{/if}}
+  <form {{action "save" on="submit"}}>
+    <div class="form-group">
+      {{input class="form-control" type="text" placeholder="Name" value=model.name}}
+    </div>
+    <div class="form-group">
+      {{input class="form-control" type="text" placeholder="Username" value=model.username}}
+    </div>
+    <div class="form-group">
+      {{input class="form-control" type="email" placeholder="Email" value=model.email}}
+    </div>
+    <div class="form-group">
+      {{input class="form-control" type="password" placeholder="Password" value=model.password}}
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Sign Up</button><span class="pull-right">Already a member? {{#link-to "index"}}Log In{{/link-to}}</span>
+    </div>
+  </form>
+</div>
